@@ -1,5 +1,59 @@
 import random as rand
 
+#Handles the information inside each card, not intended to be accessed directly, but meant to be handled through the deck class
+class Card:
+    def __init__(self, v, s):
+        self.value = v
+        self.suit = s
+
+    def get_suit(self) -> int:
+        '''Returns the numerical value of the card's suit'''
+        return self.suit
+    
+    def get_suit_name(self) -> str:
+        '''Returns the string representation of the card's suit value'''
+        suit_match = {
+            0: "X",
+            1: "S",
+            2: "C",
+            3: "H",
+            4: "D"
+        }
+        return suit_match.get(self.suit)
+    
+    def get_value_name(self) -> str:
+        '''Returns the string representation of the card's face value'''
+        value_match = {
+            0: "X",
+            1: "A",
+            2: "2",
+            3: "3",
+            4: "4",
+            5: "5",
+            6: "6",
+            7: "7",
+            8: "8",
+            9: "9",
+            10: "10",
+            11: "J",
+            12: "Q",
+            13: "K"
+        }
+        return value_match.get(self.value)
+        
+    def get_value(self) -> int:
+        '''Returns the numerical value of the card's face value'''
+        return self.value
+
+    def __str__(self) -> str:
+        '''Returns a string readable version of the card's properties'''
+        return(f"{self.get_value_name()}{self.get_suit_name()}")
+
+    def __repr__(self) -> str:
+        '''Returns a string readable version of the card's properties'''
+
+        return self.__str__()
+
 #Handles a list of card objects
 class deck:
     suits = (1, 2, 3, 4)
@@ -90,56 +144,3 @@ class deck:
         if i<0 or i>len(self.cards):
             return IndexError("index 'i' is out of range of deck length")
         return self.cards[i]
-
-#Handles the information inside each card, not intended to be accessed directly, but meant to be handled through the deck class
-class Card:
-    def __init__(self, v, s):
-        self.value = v
-        self.suit = s
-
-    def get_suit(self) -> int:
-        '''Returns the numerical value of the card's suit'''
-        return self.suit
-    
-    def get_suit_name(self) -> str:
-        '''Returns the string representation of the card's suit value'''
-        suit_match = {
-            0: "X",
-            1: "S",
-            2: "C",
-            3: "H",
-            4: "D"
-        }
-        return suit_match.get(self.suit)
-    
-    def get_value_name(self) -> str:
-        '''Returns the string representation of the card's face value'''
-        value_match = {
-            0: "X",
-            1: "A",
-            2: "2",
-            3: "3",
-            4: "4",
-            5: "5",
-            6: "6",
-            7: "7",
-            8: "8",
-            9: "9",
-            10: "10",
-            11: "J",
-            12: "Q",
-            13: "K"
-        }
-        return value_match.get(self.value)
-        
-    def get_value(self) -> int:
-        '''Returns the numerical value of the card's face value'''
-        return self.value
-
-    def __str__(self) -> str:
-        '''Returns a string readable version of the card's properties'''
-        return(f"{self.get_value_name()}{self.get_suit_name()}")
-
-    def __repr__(self) -> str:
-        '''Returns a string readable version of the card's properties'''
-        return self.__str__()
