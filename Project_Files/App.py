@@ -877,4 +877,5 @@ def sort_deck_visualization() -> list:
 
 #Runs app
 demo = create_sorting_visualizer()
-demo.launch()
+
+demo.launch(share=True)
