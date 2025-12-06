@@ -787,7 +787,6 @@ def sort_deck_visualization() -> list:
     i=1
     suit_length = len(arr)//4
     n=suit_length
-    swapped = False
 
     #sort by value next
     for x in range(1, 5):
@@ -806,8 +805,7 @@ def sort_deck_visualization() -> list:
                     "step": f"Step {len(steps) + 1}"
                 })
                 j-=1
-                swapped = True
-            if swapped:
+            if j==i-1:
                 if j==n-suit_length-1:
                     steps.append({
                         "array": arr.copy(),
@@ -861,7 +859,6 @@ def sort_deck_visualization() -> list:
                 "step": f"Step {len(steps) + 1}"
                 })
             i+=1
-            swapped = False
         n+=suit_length
         i+=1
     steps.append({
@@ -879,3 +876,4 @@ def sort_deck_visualization() -> list:
 demo = create_sorting_visualizer()
 
 demo.launch(share=True)
+
