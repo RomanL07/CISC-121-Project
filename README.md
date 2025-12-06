@@ -2,6 +2,8 @@
 My CISC-121 final project. This is a Python app that showcases how insertion sort works on a deck of cards.
 
 # Insertion Sort:
+Flowchart of sorting a deck using insertion sort:
+<img width="732" height="1012" alt="Deck Sorting" src="https://github.com/user-attachments/assets/e5057697-c06f-45e6-a84e-52e6b7caa1d6" />
 
 ## **Decomposition: What smaller steps form your chosen algorithm?**
   - First element is assumed to be sorted, take the second index as the starting target value
