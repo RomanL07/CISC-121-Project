@@ -1,17 +1,17 @@
 import gradio as gr
-import Deck as main
+import Deck as dk
 import random as rand
 
 #Demonstrates basics of insertion sort
 ins_arr = []
 #Show final product
-d1 = main.deck()
+d1 = dk.deck()
 #Show how suits are sorted
-d2 = main.deck()
+d2 = dk.deck()
 #Show how values are sorted
-d3 = main.deck()
+d3 = dk.deck()
 #Show how the whole deck gets sorted
-d4 = main.deck()
+d4 = dk.deck()
 
 
 def generate_arr(length: int=15) -> list:
@@ -876,4 +876,5 @@ def sort_deck_visualization() -> list:
 demo = create_sorting_visualizer()
 
 demo.launch(share=True)
+
 
