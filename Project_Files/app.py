@@ -599,7 +599,7 @@ def sort_suit_visualization() -> list:
 
         steps.append({
             "array": arr.copy(),
-            "description": f"inserting {target.get_suit_name()} at index {j+1} and moving remaining elements over",
+            "description": f"inserting {target} at index {j+1} and moving remaining elements over",
             "target_index": i,
             "current_index": j+1,
             "moved_index": list(range(j+1, i+1)),
@@ -767,7 +767,7 @@ def sort_deck_visualization() -> list:
 
         steps.append({
             "array": arr.copy(),
-            "description": f"inserting {target.get_suit_name()} at index {j+1} and moving remaining elements over",
+            "description": f"inserting {target} at index {j+1} and moving remaining elements over",
             "target_index": i,
             "current_index": j+1,
             "moved_index": list(range(j+1, i+1)),
