@@ -1,6 +1,8 @@
 # CISC-121-Project
 My CISC-121 final project. This is a Python app that showcases how insertion sort works on a deck of cards.
 
+https://github.com/user-attachments/assets/95bee079-3f04-4e6f-aa4b-6daef9e4e659
+
 # Insertion Sort:
 Flowchart of sorting a deck using insertion sort:
 
