@@ -2,7 +2,7 @@
 My CISC-121 final project. This is a Python app that showcases how insertion sort works on a deck of cards.
 
 **Decomposition: What smaller steps form your chosen algorithm?**
-  Insertion Sort:
+Insertion Sort:
   - First element is assumed to be sorted, take the second index as the starting target value
   - Backwards linear search from the target value index
   - Insertion of the target value at the correct spot
