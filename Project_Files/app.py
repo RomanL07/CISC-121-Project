@@ -805,28 +805,8 @@ def sort_deck_visualization() -> list:
                     "step": f"Step {len(steps) + 1}"
                 })
                 j-=1
+                
             if j==i-1:
-                if j==n-suit_length-1:
-                    steps.append({
-                        "array": arr.copy(),
-                        "description": f"{target.get_value_name()} has reached the front of its suit",
-                        "target_index": i,
-                        "current_index": j,
-                        "moved_index": list(range(j, i)),
-                        "sublist": list(range(n-suit_length, n)),
-                        "step": f"Step {len(steps) + 1}"
-                    })
-                else:   
-                    steps.append({
-                        "array": arr.copy(),
-                        "description": f"{target.get_value_name()} is greater than {arr[j].get_value_name()}",
-                        "target_index": i,
-                        "current_index": j,
-                        "moved_index": list(range(j, i)),
-                        "sublist": list(range(n-suit_length, n)),
-                        "step": f"Step {len(steps) + 1}"
-                    })
-            else:
                 if j==n-suit_length-1:
                     steps.append({
                         "array": arr.copy(),
@@ -837,10 +817,31 @@ def sort_deck_visualization() -> list:
                         "sublist": list(range(n-suit_length, n)),
                         "step": f"Step {len(steps) + 1}"
                     })
-                else:
+                else:   
                     steps.append({
                         "array": arr.copy(),
                         "description": f"{target.get_value_name()} is already greater than {arr[j].get_value_name()}",
+                        "target_index": i,
+                        "current_index": j,
+                        "moved_index": list(range(j, i)),
+                        "sublist": list(range(n-suit_length, n)),
+                        "step": f"Step {len(steps) + 1}"
+                    })
+            else:
+                if j==n-suit_length-1:
+                    steps.append({
+                        "array": arr.copy(),
+                        "description": f"{target} reached the front of its suit",
+                        "target_index": i,
+                        "current_index": j,
+                        "moved_index": list(range(j, i)),
+                        "sublist": list(range(n-suit_length, n)),
+                        "step": f"Step {len(steps) + 1}"
+                    })
+                else:
+                    steps.append({
+                        "array": arr.copy(),
+                        "description": f"{target.get_value_name()} is greater than {arr[j].get_value_name()}",
                         "target_index": i,
                         "current_index": j,
                         "moved_index": list(range(j, i)),
@@ -851,7 +852,7 @@ def sort_deck_visualization() -> list:
             arr.pop(i+1)
             steps.append({
                 "array": arr.copy(),
-                "description": f"inserting {target.get_value_name()} at index {j+1} and moving remaining elements over",
+                "description": f"inserting {target} at index {j+1} and moving remaining elements over",
                 "target_index": i,
                 "current_index": j+1,
                 "moved_index": list(range(j+1, i+1)),
@@ -859,6 +860,7 @@ def sort_deck_visualization() -> list:
                 "step": f"Step {len(steps) + 1}"
                 })
             i+=1
+
         n+=suit_length
         i+=1
     steps.append({
@@ -874,7 +876,4 @@ def sort_deck_visualization() -> list:
 
 #Runs app
 demo = create_sorting_visualizer()
-
 demo.launch(share=True)
-
-
